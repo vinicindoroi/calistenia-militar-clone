@@ -1,0 +1,23 @@
+name = "calistenia-checkout"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Chave pública da Stripe (pk_live_... ou pk_test_...)
+STRIPE_PUBLISHABLE_KEY = "pk_test_SEU_TOKEN_AQUI"
+
+# Moeda padrão e valores em centavos (ex: 1900 = $19.00 USD)
+DEFAULT_PRICE_CENTS = 1900
+DISCOUNT_PRICE_CENTS = 1400
+CURRENCY = "usd"
+PRODUCT_NAME = "Operación Calistenia Militar - Protocolo Táctico 21 Días"
+
+# URL de sucesso e retorno
+SUCCESS_URL = "https://calisteniamilitar.site/acesso-confirmado"
+CANCEL_URL = "https://calisteniamilitar.site"
+
+# NOTA DE SEGURANÇA:
+# A STRIPE_SECRET_KEY e STRIPE_WEBHOOK_SECRET devem ser salvas como segredos via Wrangler:
+# npx wrangler secret put STRIPE_SECRET_KEY
+# npx wrangler secret put STRIPE_WEBHOOK_SECRET

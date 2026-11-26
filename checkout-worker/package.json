@@ -1,0 +1,16 @@
+{
+  "name": "calistenia-militar-checkout",
+  "version": "1.0.0",
+  "description": "Checkout próprio de alta conversão integrado com Stripe rodando em Cloudflare Worker",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "stripe": "^17.7.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.114.0"
+  }
+}

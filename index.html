@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Operación Calistenia Militar - Evaluación Táctica</title>
+  <title>Operación Calistenia Militar - Evaluación Táctica Completa</title>
   <meta name="description" content="Protocolo Táctico Militar de Calistenia: Transforma y define tu físico en 21 días usando solo el peso de tu cuerpo." />
   <link rel="icon" href="/icon.svg" sizes="any" type="image/svg+xml" />
   
@@ -53,23 +53,48 @@
     .glow-neon {
       box-shadow: 0 0 35px rgba(74, 222, 128, 0.4);
     }
-    .border-glow {
-      box-shadow: inset 0 0 15px rgba(34, 197, 94, 0.15), 0 0 15px rgba(34, 197, 94, 0.2);
-    }
     .selected-card {
       border-color: #22c55e !important;
-      background: linear-gradient(180deg, rgba(34,197,94,0.15) 0%, rgba(9,20,12,0.6) 100%) !important;
+      background: linear-gradient(180deg, rgba(34,197,94,0.2) 0%, rgba(9,20,12,0.7) 100%) !important;
       transform: scale(1.02);
       box-shadow: 0 0 25px rgba(34, 197, 94, 0.4) !important;
     }
-    @keyframes pulse-fast {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+    @keyframes scan {
+      0% { top: 0%; opacity: 0.8; }
+      50% { opacity: 1; }
+      100% { top: 100%; opacity: 0.8; }
     }
-    .animate-radar {
-      animation: pulse-fast 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    .animate-scan {
+      animation: scan 2.5s ease-in-out infinite;
     }
-    /* Custom Scrollbar */
+    /* Custom Slider Style */
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      background: transparent;
+    }
+    input[type=range]:focus {
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 10px;
+      cursor: pointer;
+      background: #182218;
+      border-radius: 5px;
+      border: 1px solid #3d543d;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      height: 28px;
+      width: 28px;
+      border-radius: 50%;
+      background: #22c55e;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -10px;
+      box-shadow: 0 0 15px #22c55e;
+      border: 2px solid #ffffff;
+    }
     ::-webkit-scrollbar {
       width: 6px;
     }
@@ -97,7 +122,7 @@
       <div class="flex items-center gap-2 text-neutral-300">
         <span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
         <span class="font-semibold text-emerald-400 tactical-font tracking-wider uppercase text-[11px] sm:text-xs">
-          ACCESO RESTRINGIDO
+          RECLUTAMIENTO ACTIVO
         </span>
         <span class="hidden sm:inline text-neutral-500">•</span>
         <span class="hidden sm:inline text-neutral-300">
@@ -106,7 +131,7 @@
       </div>
       <div class="flex items-center gap-1.5 text-neutral-400 bg-neutral-900/80 px-2.5 py-1 rounded-md border border-neutral-800">
         <i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-400"></i>
-        <span class="text-neutral-400 text-[11px]">Tu sesión expira en:</span>
+        <span class="text-neutral-400 text-[11px]">Expira en:</span>
         <span id="countdown" class="font-mono font-bold text-emerald-400 text-xs">14:59</span>
       </div>
     </div>
@@ -121,24 +146,22 @@
         <span id="step-indicator" class="flex items-center gap-1.5 text-emerald-400 font-semibold tracking-wider uppercase tactical-font">
           <i data-lucide="crosshair" class="w-3.5 h-3.5"></i> FASE 1: PERFIL TÁCTICO
         </span>
-        <span id="progress-percent" class="font-bold text-neutral-200">18% COMPLETADO</span>
+        <span id="progress-percent" class="font-bold text-neutral-200">12% COMPLETADO</span>
       </div>
       <div class="w-full h-2.5 bg-neutral-900 rounded-full overflow-hidden p-0.5 border border-neutral-800">
-        <div id="progress-bar" class="h-full bg-gradient-to-r from-emerald-600 via-emerald-400 to-green-300 rounded-full transition-all duration-500 ease-out shadow-[0_0_12px_rgba(34,197,94,0.6)]" style="width: 18%"></div>
+        <div id="progress-bar" class="h-full bg-gradient-to-r from-emerald-600 via-emerald-400 to-green-300 rounded-full transition-all duration-500 ease-out shadow-[0_0_12px_rgba(34,197,94,0.6)]" style="width: 12%"></div>
       </div>
     </div>
 
     <!-- ============================================== -->
-    <!-- STEP 1: MICRO-COMPROMISO RÁPIDO (Opt 2 & Opt 1) -->
+    <!-- STEP 1: MICRO-COMPROMISO INICIAL (Opt 1 & 2)   -->
     <!-- ============================================== -->
     <section id="step-1" class="quiz-step w-full flex flex-col items-center">
-      <!-- Tag de reclutamiento -->
       <div class="inline-flex items-center gap-2 mb-4 px-3.5 py-1 bg-emerald-950/40 rounded-full border border-emerald-500/30 backdrop-blur-sm">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#22c55e]"></span>
         <span class="text-[11px] uppercase tracking-widest text-emerald-400 font-bold tactical-font">Diagnóstico Táctico 2026</span>
       </div>
 
-      <!-- HEADLINE OTIMIZADA (Opt 1) -->
       <h1 class="text-2xl sm:text-4xl md:text-5xl font-black text-center mb-3 tracking-tight uppercase leading-tight tactical-font">
         <span class="block text-white">Descubre el protocolo militar exacto</span>
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-300 to-emerald-500 drop-shadow-[0_0_20px_rgba(34,197,94,0.3)]">
@@ -150,18 +173,17 @@
       </h1>
       
       <p class="text-sm sm:text-base text-neutral-400 text-center max-w-xl mx-auto mb-8">
-        Sin membresías de gimnasio, sin pesas pesadas y sin dietas restrictivas. Completa este test de 60 segundos para generar tu hoja de ruta personalizada.
+        Sin pesas pesadas ni dietas extremas. Responde a continuación para calibrar tus métricas corporales y generar tu diagnóstico de IMC.
       </p>
 
-      <!-- MICRO-COMMITMENT QUESTION (Opt 2) -->
       <div class="w-full max-w-xl bg-neutral-900/60 p-5 sm:p-7 rounded-2xl border border-neutral-800/80 backdrop-blur-md shadow-2xl">
         <div class="text-center mb-6">
-          <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Paso 01 / 06</span>
+          <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Paso 01 / 10</span>
           <h2 class="text-lg sm:text-xl font-bold text-white mt-1">¿Cuánto tiempo tienes disponible para entrenar al día?</h2>
         </div>
 
         <div class="grid grid-cols-1 gap-3.5">
-          <button onclick="nextStep(2, 'time', '15-20')" class="quiz-btn group relative flex items-center justify-between p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500/80 hover:bg-neutral-800/60 transition-all duration-200 text-left">
+          <button onclick="nextStep(2, 'time', '15-20')" class="quiz-btn group relative flex items-center justify-between p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500 hover:bg-neutral-800/60 transition-all text-left">
             <div class="flex items-center gap-3.5">
               <div class="w-10 h-10 rounded-lg bg-emerald-950/60 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
                 <i data-lucide="zap" class="w-5 h-5"></i>
@@ -174,7 +196,7 @@
             <i data-lucide="chevron-right" class="w-5 h-5 text-neutral-500 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all"></i>
           </button>
 
-          <button onclick="nextStep(2, 'time', '20-30')" class="quiz-btn group relative flex items-center justify-between p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500/80 hover:bg-neutral-800/60 transition-all duration-200 text-left">
+          <button onclick="nextStep(2, 'time', '20-30')" class="quiz-btn group relative flex items-center justify-between p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500 hover:bg-neutral-800/60 transition-all text-left">
             <div class="flex items-center gap-3.5">
               <div class="w-10 h-10 rounded-lg bg-emerald-950/60 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
                 <i data-lucide="flame" class="w-5 h-5"></i>
@@ -187,7 +209,7 @@
             <i data-lucide="chevron-right" class="w-5 h-5 text-neutral-500 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all"></i>
           </button>
 
-          <button onclick="nextStep(2, 'time', '30+')" class="quiz-btn group relative flex items-center justify-between p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500/80 hover:bg-neutral-800/60 transition-all duration-200 text-left">
+          <button onclick="nextStep(2, 'time', '30+')" class="quiz-btn group relative flex items-center justify-between p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500 hover:bg-neutral-800/60 transition-all text-left">
             <div class="flex items-center gap-3.5">
               <div class="w-10 h-10 rounded-lg bg-emerald-950/60 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
                 <i data-lucide="shield" class="w-5 h-5"></i>
@@ -204,18 +226,17 @@
     </section>
 
     <!-- ============================================== -->
-    <!-- STEP 2: EDAD (Com imagens originais calibradas) -->
+    <!-- STEP 2: EDAD (Com imagens originais)           -->
     <!-- ============================================== -->
     <section id="step-2" class="quiz-step hidden w-full flex flex-col items-center">
       <div class="text-center mb-6">
-        <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Paso 02 / 06</span>
+        <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Paso 02 / 10</span>
         <h2 class="text-xl sm:text-3xl font-black text-white mt-1 tactical-font uppercase">Selecciona tu rango de edad</h2>
         <p class="text-neutral-400 text-sm mt-1">El metabolismo muscular responde de forma diferente según cada década.</p>
       </div>
 
       <div class="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-        <!-- 18 - 29 -->
-        <button onclick="selectAge(this, '18-29', 3)" class="quiz-btn group relative h-64 sm:h-72 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all duration-300 flex flex-col justify-end p-4 text-left shadow-lg">
+        <button onclick="selectAge(this, '18-29', 3)" class="quiz-btn group relative h-64 sm:h-72 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all flex flex-col justify-end p-4 text-left shadow-lg">
           <img src="/assets/18-29.webp" alt="18-29" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500" />
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
           <div class="relative z-10">
@@ -225,8 +246,7 @@
           </div>
         </button>
 
-        <!-- 30 - 39 -->
-        <button onclick="selectAge(this, '30-39', 3)" class="quiz-btn group relative h-64 sm:h-72 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all duration-300 flex flex-col justify-end p-4 text-left shadow-lg">
+        <button onclick="selectAge(this, '30-39', 3)" class="quiz-btn group relative h-64 sm:h-72 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all flex flex-col justify-end p-4 text-left shadow-lg">
           <img src="/assets/30-39.webp" alt="30-39" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500" />
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
           <div class="relative z-10">
@@ -236,8 +256,7 @@
           </div>
         </button>
 
-        <!-- 40 - 49 -->
-        <button onclick="selectAge(this, '40-49', 3)" class="quiz-btn group relative h-64 sm:h-72 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all duration-300 flex flex-col justify-end p-4 text-left shadow-lg">
+        <button onclick="selectAge(this, '40-49', 3)" class="quiz-btn group relative h-64 sm:h-72 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all flex flex-col justify-end p-4 text-left shadow-lg">
           <img src="/assets/40-49.webp" alt="40-49" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500" />
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
           <div class="relative z-10">
@@ -247,8 +266,7 @@
           </div>
         </button>
 
-        <!-- 50+ -->
-        <button onclick="selectAge(this, '50+', 3)" class="quiz-btn group relative h-64 sm:h-72 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all duration-300 flex flex-col justify-end p-4 text-left shadow-lg">
+        <button onclick="selectAge(this, '50+', 3)" class="quiz-btn group relative h-64 sm:h-72 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all flex flex-col justify-end p-4 text-left shadow-lg">
           <img src="/assets/50+.webp" alt="50+" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500" />
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
           <div class="relative z-10">
@@ -265,58 +283,47 @@
     </section>
 
     <!-- ============================================== -->
-    <!-- STEP 3: OBJETIVO PRINCIPAL -->
+    <!-- STEP 3: OBJETIVO PRINCIPAL                     -->
     <!-- ============================================== -->
     <section id="step-3" class="quiz-step hidden w-full flex flex-col items-center">
       <div class="text-center mb-6">
-        <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Paso 03 / 06</span>
-        <h2 class="text-xl sm:text-3xl font-black text-white mt-1 tactical-font uppercase">¿Cuál es tu objetivo físico principal?</h2>
-        <p class="text-neutral-400 text-sm mt-1">Tu plan calibrará las series y descansos en base a este objetivo.</p>
+        <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Paso 03 / 10</span>
+        <h2 class="text-xl sm:text-3xl font-black text-white mt-1 tactical-font uppercase">¿Cuál es tu objetivo principal?</h2>
+        <p class="text-neutral-400 text-sm mt-1">Selecciona la meta primaria para tu ciclo militar de 21 días.</p>
       </div>
 
       <div class="w-full max-w-2xl grid grid-cols-1 sm:grid-cols-2 gap-4">
         <button onclick="selectCard(this, 'goal', 'perder', 4)" class="quiz-btn flex items-center gap-4 p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500 text-left transition-all">
-          <img src="/assets/objetivo/perder.webp" alt="Perder grasa" class="w-14 h-14 rounded-lg object-contain bg-neutral-950 p-1 border border-neutral-800" />
+          <img src="/assets/objetivo/perder.webp" alt="Perder peso" class="w-14 h-14 rounded-lg object-contain bg-neutral-950 p-1 border border-neutral-800" />
           <div>
-            <h3 class="font-bold text-white text-base">Perder grasa corporal</h3>
-            <p class="text-xs text-neutral-400">Eliminar barriga y definir cintura</p>
+            <h3 class="font-bold text-white text-base">Perder peso</h3>
+            <p class="text-xs text-neutral-400">Quemar grasa abdominal rápidamente</p>
           </div>
         </button>
 
         <button onclick="selectCard(this, 'goal', 'ganar', 4)" class="quiz-btn flex items-center gap-4 p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500 text-left transition-all">
           <img src="/assets/objetivo/ganar.webp" alt="Ganar músculo" class="w-14 h-14 rounded-lg object-contain bg-neutral-950 p-1 border border-neutral-800" />
           <div>
-            <h3 class="font-bold text-white text-base">Construir masa muscular</h3>
-            <p class="text-xs text-neutral-400">Pecho ancho, brazos y espalda</p>
+            <h3 class="font-bold text-white text-base">Ganar músculo</h3>
+            <p class="text-xs text-neutral-400">Hipertrofia en torso, pecho y brazos</p>
           </div>
         </button>
 
         <button onclick="selectCard(this, 'goal', 'recomposicion', 4)" class="quiz-btn flex items-center gap-4 p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500 text-left transition-all">
           <img src="/assets/objetivo/ganareperder.webp" alt="Recomposición" class="w-14 h-14 rounded-lg object-contain bg-neutral-950 p-1 border border-neutral-800" />
           <div>
-            <h3 class="font-bold text-white text-base">Recomposición corporal</h3>
-            <p class="text-xs text-neutral-400">Quemar grasa y tonificar a la vez</p>
+            <h3 class="font-bold text-white text-base">Perder grasa y ganar músculo</h3>
+            <p class="text-xs text-neutral-400">Recomposición corporal atlética</p>
           </div>
         </button>
 
         <button onclick="selectCard(this, 'goal', 'fuerza', 4)" class="quiz-btn flex items-center gap-4 p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500 text-left transition-all">
           <img src="/assets/objetivo/mejorar.webp" alt="Condición" class="w-14 h-14 rounded-lg object-contain bg-neutral-950 p-1 border border-neutral-800" />
           <div>
-            <h3 class="font-bold text-white text-base">Condición física militar</h3>
-            <p class="text-xs text-neutral-400">Resistencia extrema y agilidad</p>
+            <h3 class="font-bold text-white text-base">Mejorar la condición física general</h3>
+            <p class="text-xs text-neutral-400">Resistencia extrema y agilidad militar</p>
           </div>
         </button>
-      </div>
-
-      <!-- PROVA SOCIAL CONTEXTUAL NO MEIO DO QUIZ (Opt 5) -->
-      <div class="mt-8 w-full max-w-xl bg-emerald-950/20 border border-emerald-500/30 rounded-xl p-3.5 flex items-center justify-between gap-3 backdrop-blur-sm">
-        <div class="flex items-center gap-2">
-          <span class="text-lg">🎖️</span>
-          <p class="text-xs text-neutral-300">
-            <strong class="text-emerald-400">+14.820 hombres</strong> en Latinoamérica ya activaron su Protocolo Militar.
-          </p>
-        </div>
-        <div class="flex text-amber-400 text-xs">★★★★★</div>
       </div>
 
       <button onclick="prevStep(2)" class="mt-6 inline-flex items-center gap-1.5 text-xs text-neutral-400 hover:text-white transition-colors">
@@ -325,45 +332,49 @@
     </section>
 
     <!-- ============================================== -->
-    <!-- STEP 4: ZONAS DE ENFOQUE (Abdomen, Pecho, etc.) -->
+    <!-- STEP 4: OBJETIVO CORPORAL (BIOTIPO)            -->
     <!-- ============================================== -->
     <section id="step-4" class="quiz-step hidden w-full flex flex-col items-center">
       <div class="text-center mb-6">
-        <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Paso 04 / 06</span>
-        <h2 class="text-xl sm:text-3xl font-black text-white mt-1 tactical-font uppercase">¿En qué zona deseas el mayor impacto?</h2>
-        <p class="text-neutral-400 text-sm mt-1">Priorizaremos las rutinas de hipertrofia en esta zona muscular.</p>
+        <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Paso 04 / 10</span>
+        <h2 class="text-xl sm:text-3xl font-black text-white mt-1 tactical-font uppercase">¿Cuál es tu objetivo corporal?</h2>
+        <p class="text-neutral-400 text-sm mt-1">Elige la estética corporal que deseas construir.</p>
       </div>
 
-      <div class="w-full max-w-2xl grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <button onclick="selectCard(this, 'zone', 'abdomen', 5)" class="quiz-btn group relative h-48 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all flex flex-col justify-end p-3 text-left">
-          <img src="/assets/zones/abdomen.webp" alt="Abdomen" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-all" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+      <div class="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+        <button onclick="selectCard(this, 'body_goal', 'slim', 5)" class="quiz-btn group relative h-64 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all flex flex-col justify-end p-3 text-left">
+          <img src="/assets/slim.webp" alt="Delgado" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-all" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
           <div class="relative z-10">
-            <p class="font-bold text-white text-sm tactical-font">Abdomen & Core</p>
+            <p class="font-bold text-white text-base tactical-font">Delgado</p>
+            <p class="text-[11px] text-neutral-400">Fibroso y liviano</p>
           </div>
         </button>
 
-        <button onclick="selectCard(this, 'zone', 'pecho', 5)" class="quiz-btn group relative h-48 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all flex flex-col justify-end p-3 text-left">
-          <img src="/assets/zones/chest.webp" alt="Pecho" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-all" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+        <button onclick="selectCard(this, 'body_goal', 'athletic', 5)" class="quiz-btn group relative h-64 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all flex flex-col justify-end p-3 text-left">
+          <img src="/assets/athletic.webp" alt="Atlético" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-all" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
           <div class="relative z-10">
-            <p class="font-bold text-white text-sm tactical-font">Pecho Esculpido</p>
+            <p class="font-bold text-white text-base tactical-font">Atlético</p>
+            <p class="text-[11px] text-neutral-400">Rápido y ágil</p>
           </div>
         </button>
 
-        <button onclick="selectCard(this, 'zone', 'brazos', 5)" class="quiz-btn group relative h-48 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all flex flex-col justify-end p-3 text-left">
-          <img src="/assets/zones/brazos.webp" alt="Brazos" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-all" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+        <button onclick="selectCard(this, 'body_goal', 'definied', 5)" class="quiz-btn group relative h-64 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all flex flex-col justify-end p-3 text-left">
+          <img src="/assets/definied.webp" alt="Marcado" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-all" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
           <div class="relative z-10">
-            <p class="font-bold text-white text-sm tactical-font">Brazos & Hombros</p>
+            <p class="font-bold text-white text-base tactical-font">Marcado</p>
+            <p class="text-[11px] text-neutral-400">Abdomen y venas visibles</p>
           </div>
         </button>
 
-        <button onclick="selectCard(this, 'zone', 'piernas', 5)" class="quiz-btn group relative h-48 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all flex flex-col justify-end p-3 text-left">
-          <img src="/assets/zones/piernas.webp" alt="Piernas" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-all" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+        <button onclick="selectCard(this, 'body_goal', 'fuerte', 5)" class="quiz-btn group relative h-64 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all flex flex-col justify-end p-3 text-left">
+          <img src="/assets/fuerte.webp" alt="Fuerte" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-all" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
           <div class="relative z-10">
-            <p class="font-bold text-white text-sm tactical-font">Piernas & Potencia</p>
+            <p class="font-bold text-white text-base tactical-font">Fuerte</p>
+            <p class="text-[11px] text-neutral-400">Poder y masa militar</p>
           </div>
         </button>
       </div>
@@ -374,97 +385,102 @@
     </section>
 
     <!-- ============================================== -->
-    <!-- STEP 5: TIPO DE CUERPO DESEADO -->
+    <!-- STEP 5: ÁREAS DE ENFOQUE (MULTISELECT ORIGINAL) -->
     <!-- ============================================== -->
     <section id="step-5" class="quiz-step hidden w-full flex flex-col items-center">
       <div class="text-center mb-6">
-        <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Paso 05 / 06</span>
-        <h2 class="text-xl sm:text-3xl font-black text-white mt-1 tactical-font uppercase">¿Qué físico militar aspiras tener?</h2>
-        <p class="text-neutral-400 text-sm mt-1">Selecciona el biotipo que deseas alcanzar al día 21.</p>
+        <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Paso 05 / 10</span>
+        <h2 class="text-xl sm:text-3xl font-black text-white mt-1 tactical-font uppercase">¿Cuáles son las áreas en las que quieres enfocarte?</h2>
+        <p class="text-neutral-400 text-sm mt-1">Elige todas las opciones que apliquen a tu objetivo.</p>
       </div>
 
-      <div class="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-        <button onclick="selectCard(this, 'body_goal', 'definied', 6)" class="quiz-btn group relative h-64 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all flex flex-col justify-end p-3 text-left">
-          <img src="/assets/definied.webp" alt="Definido" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-all" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+      <div class="w-full max-w-2xl grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+        <div onclick="toggleMultiArea(this, 'pecho')" class="area-card cursor-pointer group relative h-48 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500/60 bg-neutral-900 transition-all flex flex-col justify-end p-3 text-left">
+          <img src="/assets/zones/chest.webp" alt="Pectorales" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-all" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+          <div class="check-badge hidden absolute top-2 right-2 w-6 h-6 rounded-full bg-emerald-500 text-black flex items-center justify-center font-bold text-xs shadow-md">✓</div>
           <div class="relative z-10">
-            <p class="font-bold text-white text-base tactical-font">Definido y Fino</p>
-            <p class="text-[11px] text-neutral-400">Bajo % de grasa</p>
+            <p class="font-bold text-white text-sm tactical-font">Pectorales</p>
           </div>
-        </button>
+        </div>
 
-        <button onclick="selectCard(this, 'body_goal', 'athletic', 6)" class="quiz-btn group relative h-64 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all flex flex-col justify-end p-3 text-left">
-          <img src="/assets/athletic.webp" alt="Atlético" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-all" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+        <div onclick="toggleMultiArea(this, 'brazos')" class="area-card cursor-pointer group relative h-48 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500/60 bg-neutral-900 transition-all flex flex-col justify-end p-3 text-left">
+          <img src="/assets/zones/brazos.webp" alt="Brazos" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-all" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+          <div class="check-badge hidden absolute top-2 right-2 w-6 h-6 rounded-full bg-emerald-500 text-black flex items-center justify-center font-bold text-xs shadow-md">✓</div>
           <div class="relative z-10">
-            <p class="font-bold text-white text-base tactical-font">Atlético Marcial</p>
-            <p class="text-[11px] text-neutral-400">Rápido y ágil</p>
+            <p class="font-bold text-white text-sm tactical-font">Brazos</p>
           </div>
-        </button>
+        </div>
 
-        <button onclick="selectCard(this, 'body_goal', 'fuerte', 6)" class="quiz-btn group relative h-64 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all flex flex-col justify-end p-3 text-left">
-          <img src="/assets/fuerte.webp" alt="Fuerte" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-all" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+        <div onclick="toggleMultiArea(this, 'abdomen')" class="area-card cursor-pointer group relative h-48 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500/60 bg-neutral-900 transition-all flex flex-col justify-end p-3 text-left">
+          <img src="/assets/zones/abdomen.webp" alt="Abdomen" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-all" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+          <div class="check-badge hidden absolute top-2 right-2 w-6 h-6 rounded-full bg-emerald-500 text-black flex items-center justify-center font-bold text-xs shadow-md">✓</div>
           <div class="relative z-10">
-            <p class="font-bold text-white text-base tactical-font">Fuerza Militar</p>
-            <p class="text-[11px] text-neutral-400">Masa y potencia</p>
+            <p class="font-bold text-white text-sm tactical-font">Abdomen</p>
           </div>
-        </button>
+        </div>
 
-        <button onclick="selectCard(this, 'body_goal', 'slim', 6)" class="quiz-btn group relative h-64 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500 bg-neutral-900 transition-all flex flex-col justify-end p-3 text-left">
-          <img src="/assets/slim.webp" alt="Delgado" class="absolute inset-0 w-full h-full object-cover opacity-75 group-hover:scale-105 transition-all" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+        <div onclick="toggleMultiArea(this, 'piernas')" class="area-card cursor-pointer group relative h-48 rounded-xl overflow-hidden border border-neutral-800 hover:border-emerald-500/60 bg-neutral-900 transition-all flex flex-col justify-end p-3 text-left">
+          <img src="/assets/zones/piernas.webp" alt="Piernas" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-all" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+          <div class="check-badge hidden absolute top-2 right-2 w-6 h-6 rounded-full bg-emerald-500 text-black flex items-center justify-center font-bold text-xs shadow-md">✓</div>
           <div class="relative z-10">
-            <p class="font-bold text-white text-base tactical-font">Fibroso / Delgado</p>
-            <p class="text-[11px] text-neutral-400">Calistenia pura</p>
+            <p class="font-bold text-white text-sm tactical-font">Piernas</p>
           </div>
-        </button>
+        </div>
       </div>
 
-      <button onclick="prevStep(4)" class="mt-6 inline-flex items-center gap-1.5 text-xs text-neutral-400 hover:text-white transition-colors">
+      <button id="areas-continue-btn" onclick="nextStep(6)" class="w-full max-w-sm py-4 bg-emerald-500 hover:bg-emerald-400 text-black font-black text-sm uppercase rounded-xl tactical-font tracking-wider shadow-lg transition-all flex items-center justify-center gap-2">
+        <span>CONTINUAR</span>
+        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>
+
+      <button onclick="prevStep(4)" class="mt-4 inline-flex items-center gap-1.5 text-xs text-neutral-400 hover:text-white transition-colors">
         <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver a la pregunta anterior
       </button>
     </section>
 
     <!-- ============================================== -->
-    <!-- STEP 6: FRECUENCIA SEMANAL -->
+    <!-- STEP 6: FRECUENCIA DE ENTRENAMIENTO            -->
     <!-- ============================================== -->
     <section id="step-6" class="quiz-step hidden w-full flex flex-col items-center">
       <div class="text-center mb-6">
-        <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Paso 06 / 06</span>
-        <h2 class="text-xl sm:text-3xl font-black text-white mt-1 tactical-font uppercase">¿Cuántos días por semana puedes entrenar?</h2>
-        <p class="text-neutral-400 text-sm mt-1">El protocolo adapta los días de descanso para máxima recuperación sin agujetas paralizantes.</p>
+        <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Paso 06 / 10</span>
+        <h2 class="text-xl sm:text-3xl font-black text-white mt-1 tactical-font uppercase">¿Cuántas veces por semana te gustaría entrenar?</h2>
+        <p class="text-neutral-400 text-sm mt-1">El programa se auto-calibra según tus días disponibles.</p>
       </div>
 
       <div class="w-full max-w-xl grid grid-cols-1 gap-3.5">
-        <button onclick="startAnalysis(this, '3_dias')" class="quiz-btn flex items-center justify-between p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500 text-left transition-all">
+        <button onclick="selectCard(this, 'frequency', '1-2', 7)" class="quiz-btn flex items-center justify-between p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500 text-left transition-all">
           <div class="flex items-center gap-3">
-            <span class="text-2xl font-black text-emerald-400 tactical-font">3x</span>
+            <span class="text-2xl">📅</span>
             <div>
-              <p class="font-bold text-white text-sm sm:text-base">3 Días por Semana</p>
-              <p class="text-xs text-neutral-400">Ideal si tienes poco tiempo y horarios ajustados</p>
+              <p class="font-bold text-white text-base">1-2 veces por semana</p>
+              <p class="text-xs text-neutral-400">Progreso constante para agendas muy ocupadas</p>
             </div>
           </div>
           <i data-lucide="chevron-right" class="w-5 h-5 text-neutral-500"></i>
         </button>
 
-        <button onclick="startAnalysis(this, '4_5_dias')" class="quiz-btn flex items-center justify-between p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500 text-left transition-all">
+        <button onclick="selectCard(this, 'frequency', '3-4', 7)" class="quiz-btn flex items-center justify-between p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500 text-left transition-all">
           <div class="flex items-center gap-3">
-            <span class="text-2xl font-black text-emerald-400 tactical-font">4-5x</span>
+            <span class="text-2xl">💪</span>
             <div>
-              <p class="font-bold text-white text-sm sm:text-base">4 a 5 Días por Semana <span class="ml-1 text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-mono uppercase">Óptimo</span></p>
-              <p class="text-xs text-neutral-400">Máxima aceleración de resultados visibles en 21 días</p>
+              <p class="font-bold text-white text-base">3-4 veces por semana <span class="ml-1 text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-mono uppercase">Recomendado</span></p>
+              <p class="text-xs text-neutral-400">Equilibrio óptimo de estímulo muscular y recuperación</p>
             </div>
           </div>
           <i data-lucide="chevron-right" class="w-5 h-5 text-neutral-500"></i>
         </button>
 
-        <button onclick="startAnalysis(this, 'todos_los_dias')" class="quiz-btn flex items-center justify-between p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500 text-left transition-all">
+        <button onclick="selectCard(this, 'frequency', '5+', 7)" class="quiz-btn flex items-center justify-between p-4 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-emerald-500 text-left transition-all">
           <div class="flex items-center gap-3">
-            <span class="text-2xl font-black text-emerald-400 tactical-font">6-7x</span>
+            <span class="text-2xl">🔥</span>
             <div>
-              <p class="font-bold text-white text-sm sm:text-base">Todos los días (Disciplina Militar)</p>
-              <p class="text-xs text-neutral-400">Alternando días intensos con recuperación activa militar</p>
+              <p class="font-bold text-white text-base">5 o más veces por semana</p>
+              <p class="text-xs text-neutral-400">Ritmo militar acelerado de transformación total</p>
             </div>
           </div>
           <i data-lucide="chevron-right" class="w-5 h-5 text-neutral-500"></i>
@@ -477,13 +493,138 @@
     </section>
 
     <!-- ============================================== -->
-    <!-- INTERSTITIAL: TELA DE CÁLCULO E ANÁLISE (Opt 6) -->
+    <!-- STEP 7: ALTURA (SLIDER / RÉGUA TÁCTICA)       -->
     <!-- ============================================== -->
-    <section id="step-analysis" class="quiz-step hidden w-full flex flex-col items-center justify-center py-10">
+    <section id="step-7" class="quiz-step hidden w-full flex flex-col items-center">
+      <div class="text-center mb-6">
+        <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Paso 07 / 10 • Métricas Antropométricas</span>
+        <h2 class="text-xl sm:text-3xl font-black text-white mt-1 tactical-font uppercase">¿CUÁL ES TU ALTURA?</h2>
+        <p class="text-neutral-400 text-sm mt-1">Necesario para calcular tu apalancamiento biomecánico y tu Índice de Masa Corporal (IMC).</p>
+      </div>
+
+      <div class="w-full max-w-lg bg-neutral-900/80 p-6 sm:p-8 rounded-2xl border border-neutral-800 backdrop-blur-md shadow-2xl text-center">
+        <!-- Unit Toggle -->
+        <div class="inline-flex p-1 bg-black/60 rounded-lg border border-neutral-800 mb-6">
+          <button id="height-unit-cm" onclick="setHeightUnit('cm')" class="px-4 py-1 rounded-md text-xs font-bold font-mono bg-emerald-500 text-black transition-all">CM</button>
+          <button id="height-unit-in" onclick="setHeightUnit('in')" class="px-4 py-1 rounded-md text-xs font-bold font-mono text-neutral-400 transition-all">PULGADAS</button>
+        </div>
+
+        <!-- Big Display -->
+        <div class="mb-6">
+          <span id="height-display" class="text-5xl sm:text-6xl font-black text-emerald-400 tactical-font tracking-tight">175</span>
+          <span id="height-unit-label" class="text-lg font-mono text-neutral-400 ml-1">CM</span>
+        </div>
+
+        <!-- Slider Bar -->
+        <div class="px-4 mb-8">
+          <input type="range" id="height-slider" min="140" max="220" value="175" oninput="updateHeight(this.value)" />
+          <div class="flex justify-between text-xs font-mono text-neutral-500 mt-2">
+            <span>140 cm</span>
+            <span>180 cm</span>
+            <span>220 cm</span>
+          </div>
+        </div>
+
+        <button onclick="nextStep(8)" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-black font-black text-base uppercase rounded-xl tactical-font tracking-wider shadow-lg transition-all flex items-center justify-center gap-2">
+          <span>CONTINUAR</span>
+          <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <button onclick="prevStep(6)" class="mt-6 inline-flex items-center gap-1.5 text-xs text-neutral-400 hover:text-white transition-colors">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver a la pregunta anterior
+      </button>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- STEP 8: PESO ACTUAL (SLIDER TÁCTICO)           -->
+    <!-- ============================================== -->
+    <section id="step-8" class="quiz-step hidden w-full flex flex-col items-center">
+      <div class="text-center mb-6">
+        <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Paso 08 / 10 • Métricas Antropométricas</span>
+        <h2 class="text-xl sm:text-3xl font-black text-white mt-1 tactical-font uppercase">¿Cuál es tu peso actual?</h2>
+        <p class="text-neutral-400 text-sm mt-1">Permite determinar la carga gravitacional que soportarán tus articulaciones.</p>
+      </div>
+
+      <div class="w-full max-w-lg bg-neutral-900/80 p-6 sm:p-8 rounded-2xl border border-neutral-800 backdrop-blur-md shadow-2xl text-center">
+        <!-- Unit Toggle -->
+        <div class="inline-flex p-1 bg-black/60 rounded-lg border border-neutral-800 mb-6">
+          <button id="weight-unit-kg" onclick="setWeightUnit('kg')" class="px-4 py-1 rounded-md text-xs font-bold font-mono bg-emerald-500 text-black transition-all">KG</button>
+          <button id="weight-unit-lbs" onclick="setWeightUnit('lbs')" class="px-4 py-1 rounded-md text-xs font-bold font-mono text-neutral-400 transition-all">LBS</button>
+        </div>
+
+        <!-- Big Display -->
+        <div class="mb-6">
+          <span id="weight-display" class="text-5xl sm:text-6xl font-black text-emerald-400 tactical-font tracking-tight">75</span>
+          <span id="weight-unit-label" class="text-lg font-mono text-neutral-400 ml-1">KG</span>
+        </div>
+
+        <!-- Slider Bar -->
+        <div class="px-4 mb-8">
+          <input type="range" id="weight-slider" min="40" max="150" value="75" oninput="updateWeight(this.value)" />
+          <div class="flex justify-between text-xs font-mono text-neutral-500 mt-2">
+            <span>40 kg</span>
+            <span>95 kg</span>
+            <span>150 kg</span>
+          </div>
+        </div>
+
+        <button onclick="nextStep(9)" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-black font-black text-base uppercase rounded-xl tactical-font tracking-wider shadow-lg transition-all flex items-center justify-center gap-2">
+          <span>CONTINUAR</span>
+          <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <button onclick="prevStep(7)" class="mt-6 inline-flex items-center gap-1.5 text-xs text-neutral-400 hover:text-white transition-colors">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver a la pregunta anterior
+      </button>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- STEP 9: PESO DESEADO / META (SLIDER TÁCTICO)   -->
+    <!-- ============================================== -->
+    <section id="step-9" class="quiz-step hidden w-full flex flex-col items-center">
+      <div class="text-center mb-6">
+        <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider">Paso 09 / 10 • Meta de Transformación</span>
+        <h2 class="text-xl sm:text-3xl font-black text-white mt-1 tactical-font uppercase">¿Cuál es el peso que quieres alcanzar?</h2>
+        <p class="text-neutral-400 text-sm mt-1">Calcularemos tu curva de quema o hipertrofia para llegar a este peso en 21 días.</p>
+      </div>
+
+      <div class="w-full max-w-lg bg-neutral-900/80 p-6 sm:p-8 rounded-2xl border border-neutral-800 backdrop-blur-md shadow-2xl text-center">
+        <!-- Big Display -->
+        <div class="mb-6">
+          <span id="target-weight-display" class="text-5xl sm:text-6xl font-black text-emerald-400 tactical-font tracking-tight">70</span>
+          <span class="text-lg font-mono text-neutral-400 ml-1">KG</span>
+        </div>
+
+        <!-- Slider Bar -->
+        <div class="px-4 mb-8">
+          <input type="range" id="target-weight-slider" min="40" max="150" value="70" oninput="updateTargetWeight(this.value)" />
+          <div class="flex justify-between text-xs font-mono text-neutral-500 mt-2">
+            <span>40 kg</span>
+            <span>95 kg</span>
+            <span>150 kg</span>
+          </div>
+        </div>
+
+        <button onclick="startAnalysis()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-black font-black text-base uppercase rounded-xl tactical-font tracking-wider shadow-lg transition-all flex items-center justify-center gap-2">
+          <span>CALCULAR MI IMC Y POTENCIAL TÁCTICO</span>
+          <i data-lucide="calculator" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <button onclick="prevStep(8)" class="mt-6 inline-flex items-center gap-1.5 text-xs text-neutral-400 hover:text-white transition-colors">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver a la pregunta anterior
+      </button>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- INTERSTITIAL: RADAR MILITAR (Opt 6)            -->
+    <!-- ============================================== -->
+    <section id="step-analysis" class="quiz-step hidden w-full flex flex-col items-center justify-center py-8">
       <div class="w-full max-w-lg bg-neutral-900/90 border border-emerald-500/30 rounded-2xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden">
         
-        <!-- Radar Scanning Animation -->
-        <div class="relative w-28 h-28 mx-auto mb-6 flex items-center justify-center">
+        <div class="relative w-24 h-24 mx-auto mb-6 flex items-center justify-center">
           <div class="absolute inset-0 rounded-full border-2 border-emerald-500/20 animate-ping"></div>
           <div class="absolute inset-2 rounded-full border border-emerald-500/40"></div>
           <div class="absolute inset-0 rounded-full border-t-2 border-emerald-400 animate-spin"></div>
@@ -491,34 +632,32 @@
         </div>
 
         <h3 class="text-xl sm:text-2xl font-black text-center text-white uppercase tactical-font mb-2">
-          COMPILANDO TU PROTOCOLO PERSONALIZADO
+          COMPILANDO TU DIAGNÓSTICO MILITAR
         </h3>
-        <p class="text-xs text-neutral-400 text-center mb-6">Nuestros algoritmos están cruzando tu edad, biotipo y zonas de impacto...</p>
+        <p class="text-xs text-neutral-400 text-center mb-6">Cruzando tus medidas antropométricas, edad y gasto metabólico...</p>
 
-        <!-- Dynamic Loading Checklist -->
-        <div class="space-y-3.5 mb-6 text-xs sm:text-sm font-mono">
-          <div id="check-1" class="flex items-center gap-3 text-neutral-400 transition-colors">
+        <div class="space-y-3 mb-6 text-xs sm:text-sm font-mono">
+          <div id="check-1" class="flex items-center gap-3 text-neutral-400">
             <span class="w-5 h-5 rounded-full border border-neutral-700 flex items-center justify-center text-xs">1</span>
-            <span>Analizando coeficiente metabólico según tu edad...</span>
+            <span>Calculando Índice de Masa Corporal (IMC)...</span>
           </div>
 
-          <div id="check-2" class="flex items-center gap-3 text-neutral-400 transition-colors">
+          <div id="check-2" class="flex items-center gap-3 text-neutral-400">
             <span class="w-5 h-5 rounded-full border border-neutral-700 flex items-center justify-center text-xs">2</span>
-            <span>Estructurando progresiones de calistenia sin dolor articular...</span>
+            <span>Analizando sobrecarga articular y apalancamiento...</span>
           </div>
 
-          <div id="check-3" class="flex items-center gap-3 text-neutral-400 transition-colors">
+          <div id="check-3" class="flex items-center gap-3 text-neutral-400">
             <span class="w-5 h-5 rounded-full border border-neutral-700 flex items-center justify-center text-xs">3</span>
-            <span>Generando calendario táctico de 21 días...</span>
+            <span>Simulando potencial genético al Día 21...</span>
           </div>
 
-          <div id="check-4" class="flex items-center gap-3 text-neutral-400 transition-colors">
+          <div id="check-4" class="flex items-center gap-3 text-neutral-400">
             <span class="w-5 h-5 rounded-full border border-neutral-700 flex items-center justify-center text-xs">4</span>
-            <span>¡Tu plan militar exclusivo está listo!</span>
+            <span>¡Diagnóstico antropométrico completado!</span>
           </div>
         </div>
 
-        <!-- Big Progress Bar in Interstitial -->
         <div class="w-full bg-neutral-950 h-3 rounded-full overflow-hidden border border-neutral-800">
           <div id="analysis-bar" class="h-full bg-gradient-to-r from-emerald-600 via-emerald-400 to-green-300 w-0 transition-all duration-300"></div>
         </div>
@@ -527,14 +666,171 @@
     </section>
 
     <!-- ============================================== -->
-    <!-- RESULT & OFFER PAGE (Opts 7, 8, 9, 10, 11, 13) -->
+    <!-- STEP 10: SIMULATION & CALCULADORA DE IMC       -->
+    <!-- (Com Primeiro.webp e Segundo.webp originais!)   -->
+    <!-- ============================================== -->
+    <section id="step-simulation" class="quiz-step hidden w-full flex flex-col items-center">
+      
+      <!-- Top Badge -->
+      <div class="inline-flex items-center gap-2 mb-3 px-4 py-1.5 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 text-xs font-mono tracking-widest backdrop-blur-sm animate-pulse">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>ANÁLISIS DE POTENCIAL TÁCTICO & IMC</span>
+      </div>
+
+      <h1 class="text-2xl sm:text-4xl md:text-5xl font-black text-center text-white uppercase tactical-font leading-tight mb-2">
+        TU CUERPO TIENE UN <span class="text-emerald-400">ALTO POTENCIAL</span> DE DEFINICIÓN
+      </h1>
+      <p class="text-neutral-400 text-xs sm:text-sm text-center max-w-xl mx-auto mb-8">
+        Tu biotipo actual y distribución ósea reaccionan con máxima aceleración a los estímulos de calistenia táctica.
+      </p>
+
+      <!-- CALCULADORA DE IMC RESULT CARD -->
+      <div class="w-full max-w-3xl bg-neutral-900/90 border border-emerald-500/30 rounded-2xl p-5 sm:p-7 mb-8 backdrop-blur-md shadow-2xl">
+        <div class="flex items-center justify-between border-b border-neutral-800 pb-3 mb-5 text-xs font-mono">
+          <span class="text-emerald-400 font-bold flex items-center gap-1.5"><i data-lucide="activity" class="w-4 h-4"></i> EVALUACIÓN BIOMÉTRICA</span>
+          <span class="text-neutral-500">ID RECLUTA: #884-A</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 text-center">
+          <div class="bg-black/60 p-3.5 rounded-xl border border-neutral-800">
+            <span class="text-[11px] font-mono text-neutral-400 uppercase">Tu Altura</span>
+            <p id="summary-height" class="text-2xl font-black text-white tactical-font mt-0.5">175 cm</p>
+          </div>
+          <div class="bg-black/60 p-3.5 rounded-xl border border-neutral-800">
+            <span class="text-[11px] font-mono text-neutral-400 uppercase">Tu Peso Actual / Meta</span>
+            <p id="summary-weight" class="text-2xl font-black text-white tactical-font mt-0.5">75 kg → 70 kg</p>
+          </div>
+          <div class="bg-emerald-950/40 p-3.5 rounded-xl border border-emerald-500/40">
+            <span class="text-[11px] font-mono text-emerald-400 uppercase font-bold">Tu IMC Actual</span>
+            <p id="summary-imc" class="text-2xl font-black text-emerald-400 tactical-font mt-0.5">24.5 (Normal)</p>
+          </div>
+        </div>
+
+        <!-- IMC Scale Bar -->
+        <div class="mb-2">
+          <div class="flex justify-between text-[11px] font-mono text-neutral-400 mb-1">
+            <span>Bajo (&lt;18.5)</span>
+            <span class="text-emerald-400 font-bold">Normal (18.5 - 24.9)</span>
+            <span class="text-amber-400 font-bold">Sobrepeso (25 - 29.9)</span>
+            <span class="text-red-400">Obesidad (&gt;30)</span>
+          </div>
+          <div class="w-full h-3 rounded-full overflow-hidden flex bg-neutral-950 border border-neutral-800">
+            <div class="w-1/4 bg-blue-500/60"></div>
+            <div class="w-1/4 bg-emerald-500"></div>
+            <div class="w-1/4 bg-amber-500"></div>
+            <div class="w-1/4 bg-red-500/80"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BEFORE & AFTER POTENTIAL SIMULATION (Primeiro.webp & Segundo.webp originais!) -->
+      <div class="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        
+        <!-- Left: Image comparison with scan line -->
+        <div class="bg-black/50 border border-neutral-800 rounded-2xl p-4 relative overflow-hidden flex flex-col justify-between">
+          <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden border border-neutral-800 grid grid-cols-2 gap-1 bg-black">
+            <!-- Scan line animation -->
+            <div class="absolute inset-x-0 h-1 bg-emerald-400 shadow-[0_0_15px_#22c55e] z-30 pointer-events-none animate-scan"></div>
+            
+            <!-- Estado Actual (Primeiro.webp) -->
+            <div class="relative w-full h-full overflow-hidden">
+              <img src="/assets/Primeiro.webp" alt="Estado Actual" class="w-full h-full object-cover grayscale opacity-60" />
+              <div class="absolute bottom-0 inset-x-0 bg-black/80 py-1.5 text-center text-[10px] font-mono text-neutral-400 font-bold">
+                ESTADO ACTUAL
+              </div>
+            </div>
+
+            <!-- Potencial 21 Días (Segundo.webp) -->
+            <div class="relative w-full h-full overflow-hidden border-l border-emerald-500/40">
+              <img src="/assets/Segundo.webp" alt="Potencial Genético" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-emerald-500/10 mix-blend-overlay"></div>
+              <div class="absolute bottom-0 inset-x-0 bg-emerald-500 py-1.5 text-center text-[10px] font-mono text-black font-black">
+                POTENCIAL EN 21 DÍAS
+              </div>
+            </div>
+          </div>
+
+          <p class="text-[11px] text-neutral-400 text-center mt-3 font-mono">
+            Simulación calculada en base a tu relación estatura/peso.
+          </p>
+        </div>
+
+        <!-- Right: Evolutionary Attributes & Terminal -->
+        <div class="bg-neutral-900/60 border border-neutral-800 rounded-2xl p-5 flex flex-col justify-between">
+          <div class="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+            <span>📊</span> EVOLUCIÓN DE ATRIBUTOS EN 21 DÍAS
+          </div>
+
+          <div class="space-y-4 mb-6 text-xs">
+            <div>
+              <div class="flex justify-between font-bold text-white mb-1">
+                <span>💥 FUERZA EXPLOSIVA</span>
+                <span class="text-emerald-400 font-mono">45% → 92%</span>
+              </div>
+              <div class="w-full bg-neutral-950 h-2.5 rounded-full overflow-hidden border border-neutral-800">
+                <div class="bg-gradient-to-r from-emerald-600 to-green-400 h-full w-[92%] transition-all duration-1000"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between font-bold text-white mb-1">
+                <span>🏃 RESISTENCIA TÁCTICA</span>
+                <span class="text-emerald-400 font-mono">30% → 88%</span>
+              </div>
+              <div class="w-full bg-neutral-950 h-2.5 rounded-full overflow-hidden border border-neutral-800">
+                <div class="bg-gradient-to-r from-emerald-600 to-green-400 h-full w-[88%] transition-all duration-1000"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between font-bold text-white mb-1">
+                <span>💪 DEFINICIÓN MUSCULAR</span>
+                <span class="text-emerald-400 font-mono">40% → 85%</span>
+              </div>
+              <div class="w-full bg-neutral-950 h-2.5 rounded-full overflow-hidden border border-neutral-800">
+                <div class="bg-gradient-to-r from-emerald-600 to-green-400 h-full w-[85%] transition-all duration-1000"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between font-bold text-white mb-1">
+                <span>🧠 MENTALIDAD DE COMBATE</span>
+                <span class="text-emerald-400 font-mono">50% → 98%</span>
+              </div>
+              <div class="w-full bg-neutral-950 h-2.5 rounded-full overflow-hidden border border-neutral-800">
+                <div class="bg-gradient-to-r from-emerald-600 to-green-400 h-full w-[98%] transition-all duration-1000"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terminal Diagnosis -->
+          <div class="bg-black/80 rounded-xl p-3 border border-emerald-500/30 text-[11px] font-mono space-y-1 text-neutral-300">
+            <p class="text-emerald-400 font-bold border-b border-emerald-950 pb-1">🟩 DIAGNÓSTICO FINAL</p>
+            <p>&gt; BIOTIPO: <span class="text-emerald-400 font-bold">ALTO POTENCIAL</span></p>
+            <p>&gt; TIEMPO ESTIMADO DE ADAPTACIÓN: <span class="text-white font-bold">3 DÍAS</span></p>
+            <p class="text-neutral-400 mt-1">&gt; RECOMENDACIÓN: INICIAR EL PROTOCOLO ANTES DE QUE SE CIERRE LA VENTANA_</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CONTINUE TO OFFER BUTTON -->
+      <button onclick="goToOffer()" class="w-full max-w-xl py-5 px-8 bg-gradient-to-r from-emerald-500 via-green-400 to-emerald-500 text-black font-black text-lg sm:text-xl uppercase rounded-2xl shadow-[0_0_35px_rgba(34,197,94,0.6)] hover:shadow-[0_0_50px_rgba(34,197,94,0.9)] hover:scale-105 transition-all tactical-font tracking-wider flex items-center justify-center gap-3">
+        <span>VER MI PROTOCOLO MILITAR ASIGNADO</span>
+        <i data-lucide="arrow-right" class="w-6 h-6"></i>
+      </button>
+
+    </section>
+
+    <!-- ============================================== -->
+    <!-- FINAL OFFER & RECRUITMENT PAGE (Opts 8, 9, 10, 13) -->
     <!-- ============================================== -->
     <section id="step-offer" class="quiz-step hidden w-full flex flex-col items-center">
       
       <!-- Top Success Badge -->
       <div class="inline-flex items-center gap-2 mb-4 px-4 py-1.5 bg-emerald-950/60 rounded-full border border-emerald-500/50 backdrop-blur-md glow-military">
         <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
-        <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold tactical-font">PLAN DE RECLUTAMIENTO APROBADO</span>
+        <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold tactical-font">RECLUTA APROBADO • PLAN GENERADO</span>
       </div>
 
       <h1 class="text-2xl sm:text-4xl md:text-5xl font-black text-center text-white uppercase tactical-font leading-tight mb-3">
@@ -558,49 +854,6 @@
 
         <div id="dynamic-transformations" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <!-- Transformations will be filled dynamically -->
-        </div>
-      </div>
-
-      <!-- INTERACTIVE COMPARISON GRAPH (Opt 7) -->
-      <div class="w-full max-w-3xl bg-neutral-900/60 border border-neutral-800 rounded-2xl p-5 sm:p-7 mb-8 backdrop-blur-sm">
-        <h3 class="font-bold text-white text-base sm:text-lg mb-4 flex items-center gap-2 tactical-font">
-          <i data-lucide="trending-up" class="w-5 h-5 text-emerald-400"></i>
-          PROYECCIÓN DE TU EVOLUCIÓN EN 21 DÍAS
-        </h3>
-
-        <div class="space-y-4 text-xs sm:text-sm">
-          <div>
-            <div class="flex justify-between text-neutral-300 mb-1">
-              <span>Nivel de Grasa Corporal y Abdominal</span>
-              <span class="text-emerald-400 font-bold">-35% en 21 días</span>
-            </div>
-            <div class="w-full bg-neutral-950 h-3 rounded-full overflow-hidden flex border border-neutral-800">
-              <div class="bg-red-500/80 h-full w-[80%] flex items-center justify-center text-[9px] font-mono font-bold text-white">HOY: 80%</div>
-              <div class="bg-emerald-500 h-full w-[45%] flex items-center justify-center text-[9px] font-mono font-bold text-black">META: 45%</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="flex justify-between text-neutral-300 mb-1">
-              <span>Definición Muscular y Firmeza</span>
-              <span class="text-emerald-400 font-bold">+68% en 21 días</span>
-            </div>
-            <div class="w-full bg-neutral-950 h-3 rounded-full overflow-hidden flex border border-neutral-800">
-              <div class="bg-neutral-700 h-full w-[30%] flex items-center justify-center text-[9px] font-mono text-white">HOY</div>
-              <div class="bg-gradient-to-r from-emerald-500 to-green-400 h-full w-[70%] flex items-center justify-center text-[9px] font-mono font-bold text-black">META 21D</div>
-            </div>
-          </div>
-
-          <div>
-            <div class="flex justify-between text-neutral-300 mb-1">
-              <span>Energía y Testosterona Natural</span>
-              <span class="text-emerald-400 font-bold">+85% en 21 días</span>
-            </div>
-            <div class="w-full bg-neutral-950 h-3 rounded-full overflow-hidden flex border border-neutral-800">
-              <div class="bg-neutral-700 h-full w-[25%] flex items-center justify-center text-[9px] font-mono text-white">HOY</div>
-              <div class="bg-gradient-to-r from-emerald-500 to-green-400 h-full w-[75%] flex items-center justify-center text-[9px] font-mono font-bold text-black">META 21D</div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -655,7 +908,6 @@
                 <span class="text-3xl sm:text-4xl font-black text-white tactical-font">$19 <span class="text-xs text-neutral-400 font-sans font-normal">pago único</span></span>
               </div>
               
-              <!-- FRAMING DE PREÇO POR DIA (Opt 10) -->
               <p class="text-xs text-emerald-400 font-semibold mt-1">
                 ⚡ Solo <strong class="text-white">$0,63 al día</strong> durante tu desafío (menos que un café)
               </p>
@@ -699,7 +951,7 @@
   </main>
 
   <!-- ============================================== -->
-  <!-- EXIT INTENT POPUP (Opt 15) -->
+  <!-- EXIT INTENT POPUP (Opt 15)                     -->
   <!-- ============================================== -->
   <div id="exit-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
     <div class="bg-neutral-900 border-2 border-emerald-500 rounded-2xl max-w-md w-full p-6 sm:p-7 shadow-[0_0_50px_rgba(34,197,94,0.4)] relative">
@@ -716,7 +968,7 @@
           ¡ALTO AHÍ, RECLUTA!
         </h3>
         <p class="text-xs text-neutral-400 mb-4">
-          Tu diagnóstico y plaza reservada se borrarán del servidor en menos de 5 minutos.
+          Tu diagnóstico de IMC y plaza reservada se borrarán del servidor en menos de 5 minutos.
         </p>
 
         <div class="bg-emerald-950/40 border border-emerald-500/40 p-4 rounded-xl mb-5">
@@ -738,17 +990,22 @@
     </div>
   </div>
 
-  <!-- SCRIPT LOGIC (Interactive Steps, Dynamic Data & Exit-Intent) -->
+  <!-- SCRIPT LOGIC (Interactive Steps, IMC Calculator & Sliders) -->
   <script>
-    // User Answers State
     const userAnswers = {
       time: '',
       age: '18-29',
       goal: '',
-      zone: '',
       body_goal: '',
-      frequency: ''
+      areas: ['pecho', 'abdomen'],
+      frequency: '',
+      heightCm: 175,
+      weightKg: 75,
+      targetWeightKg: 70
     };
+
+    let heightUnit = 'cm';
+    let weightUnit = 'kg';
 
     const ageTransformations = {
       '18-29': [
@@ -777,7 +1034,6 @@
       ]
     };
 
-    // Forward UTM params to all checkout links
     function forwardUTMs() {
       const search = window.location.search;
       if (!search) return;
@@ -789,15 +1045,17 @@
     }
     forwardUTMs();
 
-    // Progress bar updater (Endowed Progress Effect)
     const stepProgress = {
-      1: { percent: 18, title: 'FASE 1: PERFIL TÁCTICO' },
-      2: { percent: 36, title: 'FASE 2: METABOLISMO Y EDAD' },
-      3: { percent: 54, title: 'FASE 3: OBJETIVO CENTRAL' },
-      4: { percent: 72, title: 'FASE 4: ZONAS DE IMPACTO' },
-      5: { percent: 88, title: 'FASE 5: BIOTIPO DESEADO' },
-      6: { percent: 96, title: 'FASE 6: FRECUENCIA DE MISIÓN' },
-      7: { percent: 100, title: 'ANÁLISIS COMPLETADO' }
+      1: { percent: 12, title: 'FASE 1: PERFIL TÁCTICO' },
+      2: { percent: 24, title: 'FASE 2: METABOLISMO Y EDAD' },
+      3: { percent: 36, title: 'FASE 3: OBJETIVO CENTRAL' },
+      4: { percent: 48, title: 'FASE 4: BIOTIPO DESEADO' },
+      5: { percent: 60, title: 'FASE 5: ZONAS DE IMPACTO' },
+      6: { percent: 70, title: 'FASE 6: FRECUENCIA DE MISIÓN' },
+      7: { percent: 80, title: 'FASE 7: ESTATURA TÁCTICA' },
+      8: { percent: 90, title: 'FASE 8: PESO ACTUAL' },
+      9: { percent: 96, title: 'FASE 9: PESO OBJETIVO' },
+      10: { percent: 100, title: 'SIMULACIÓN & IMC' }
     };
 
     function updateProgress(step) {
@@ -808,7 +1066,6 @@
       lucide.createIcons();
     }
 
-    // Step Switcher
     function showStep(stepNumber) {
       document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
       const target = document.getElementById('step-' + stepNumber);
@@ -828,7 +1085,6 @@
       showStep(stepNumber);
     }
 
-    // Select Card with Haptic Visual Feedback (Opt 4)
     function selectCard(btn, key, value, next) {
       userAnswers[key] = value;
       btn.classList.add('selected-card');
@@ -847,22 +1103,115 @@
       }, 250);
     }
 
-    // Start Analysis (Opt 6)
-    function startAnalysis(btn, freq) {
-      userAnswers.frequency = freq;
-      btn.classList.add('selected-card');
-
-      setTimeout(() => {
-        document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
-        document.getElementById('step-analysis').classList.remove('hidden');
-        document.getElementById('progress-container').classList.add('hidden');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-
-        runAnalysisSequence();
-      }, 200);
+    // Multiselect Areas
+    function toggleMultiArea(el, area) {
+      const badge = el.querySelector('.check-badge');
+      if (userAnswers.areas.includes(area)) {
+        userAnswers.areas = userAnswers.areas.filter(a => a !== area);
+        el.classList.remove('selected-card');
+        badge.classList.add('hidden');
+      } else {
+        userAnswers.areas.push(area);
+        el.classList.add('selected-card');
+        badge.classList.remove('hidden');
+      }
     }
 
-    function runAnalysisSequence() {
+    // Sliders & Unit Handling
+    function updateHeight(val) {
+      userAnswers.heightCm = parseInt(val);
+      if (heightUnit === 'cm') {
+        document.getElementById('height-display').innerText = val;
+      } else {
+        const inches = Math.round(val * 0.393701);
+        document.getElementById('height-display').innerText = inches;
+      }
+    }
+
+    function setHeightUnit(u) {
+      heightUnit = u;
+      const btnCm = document.getElementById('height-unit-cm');
+      const btnIn = document.getElementById('height-unit-in');
+      const label = document.getElementById('height-unit-label');
+      if (u === 'cm') {
+        btnCm.className = 'px-4 py-1 rounded-md text-xs font-bold font-mono bg-emerald-500 text-black transition-all';
+        btnIn.className = 'px-4 py-1 rounded-md text-xs font-bold font-mono text-neutral-400 transition-all';
+        label.innerText = 'CM';
+        document.getElementById('height-display').innerText = userAnswers.heightCm;
+      } else {
+        btnIn.className = 'px-4 py-1 rounded-md text-xs font-bold font-mono bg-emerald-500 text-black transition-all';
+        btnCm.className = 'px-4 py-1 rounded-md text-xs font-bold font-mono text-neutral-400 transition-all';
+        label.innerText = 'PULGADAS';
+        document.getElementById('height-display').innerText = Math.round(userAnswers.heightCm * 0.393701);
+      }
+    }
+
+    function updateWeight(val) {
+      userAnswers.weightKg = parseInt(val);
+      if (weightUnit === 'kg') {
+        document.getElementById('weight-display').innerText = val;
+      } else {
+        document.getElementById('weight-display').innerText = Math.round(val * 2.20462);
+      }
+    }
+
+    function setWeightUnit(u) {
+      weightUnit = u;
+      const btnKg = document.getElementById('weight-unit-kg');
+      const btnLbs = document.getElementById('weight-unit-lbs');
+      const label = document.getElementById('weight-unit-label');
+      if (u === 'kg') {
+        btnKg.className = 'px-4 py-1 rounded-md text-xs font-bold font-mono bg-emerald-500 text-black transition-all';
+        btnLbs.className = 'px-4 py-1 rounded-md text-xs font-bold font-mono text-neutral-400 transition-all';
+        label.innerText = 'KG';
+        document.getElementById('weight-display').innerText = userAnswers.weightKg;
+      } else {
+        btnLbs.className = 'px-4 py-1 rounded-md text-xs font-bold font-mono bg-emerald-500 text-black transition-all';
+        btnKg.className = 'px-4 py-1 rounded-md text-xs font-bold font-mono text-neutral-400 transition-all';
+        label.innerText = 'LBS';
+        document.getElementById('weight-display').innerText = Math.round(userAnswers.weightKg * 2.20462);
+      }
+    }
+
+    function updateTargetWeight(val) {
+      userAnswers.targetWeightKg = parseInt(val);
+      document.getElementById('target-weight-display').innerText = val;
+    }
+
+    // CALCULADORA DE IMC (Índice de Masa Corporal)
+    function calculateIMC() {
+      const hMeters = userAnswers.heightCm / 100;
+      const imc = (userAnswers.weightKg / (hMeters * hMeters)).toFixed(1);
+      let category = 'Normal';
+      let colorClass = 'text-emerald-400';
+
+      if (imc < 18.5) {
+        category = 'Bajo Peso';
+        colorClass = 'text-blue-400';
+      } else if (imc <= 24.9) {
+        category = 'Normal';
+        colorClass = 'text-emerald-400';
+      } else if (imc <= 29.9) {
+        category = 'Sobrepeso';
+        colorClass = 'text-amber-400';
+      } else {
+        category = 'Obesidad';
+        colorClass = 'text-red-400';
+      }
+
+      document.getElementById('summary-height').innerText = `${userAnswers.heightCm} cm`;
+      document.getElementById('summary-weight').innerText = `${userAnswers.weightKg} kg → ${userAnswers.targetWeightKg} kg`;
+      document.getElementById('summary-imc').innerHTML = `${imc} <span class="text-sm font-sans font-medium text-neutral-300">(${category})</span>`;
+      document.getElementById('summary-imc').className = `text-2xl font-black ${colorClass} tactical-font mt-0.5`;
+    }
+
+    // Run Interstitial Radar before showing IMC simulation
+    function startAnalysis() {
+      document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
+      document.getElementById('step-analysis').classList.remove('hidden');
+      document.getElementById('progress-container').classList.add('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
       const bar = document.getElementById('analysis-bar');
       const percent = document.getElementById('analysis-percent');
       
@@ -902,22 +1251,21 @@
           c4.querySelector('span:first-child').classList.add('border-emerald-500', 'bg-emerald-950');
 
           setTimeout(() => {
-            renderOfferPage();
+            calculateIMC();
+            document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
+            document.getElementById('step-simulation').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           }, 800);
         }
-      }, 40);
+      }, 35);
     }
 
-    // Render Offer Page with Dynamic Age Proofs (Opt 8)
-    function renderOfferPage() {
+    function goToOffer() {
       document.querySelectorAll('.quiz-step').forEach(el => el.classList.add('hidden'));
       document.getElementById('step-offer').classList.remove('hidden');
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      // Update age label
       document.getElementById('user-age-label').innerText = `${userAnswers.age} años`;
-
-      // Render Dynamic Transformations
       const list = ageTransformations[userAnswers.age] || ageTransformations['18-29'];
       const container = document.getElementById('dynamic-transformations');
       container.innerHTML = list.map(item => `
@@ -944,12 +1292,6 @@
       countdownEl.innerText = `${m < 10 ? '0' + m : m}:${s < 10 ? '0' + s : s}`;
     }, 1000);
 
-    // Random decrement of slots
-    setTimeout(() => {
-      const slotEl = document.getElementById('slots-count');
-      if (slotEl) slotEl.innerText = '2 cupos';
-    }, 45000);
-
     // EXIT INTENT POPUP (Opt 15)
     let exitModalShown = false;
     document.addEventListener('mouseleave', (e) => {
@@ -971,7 +1313,6 @@
       modal.classList.remove('flex');
     }
 
-    // Initialize Lucide Icons
     lucide.createIcons();
   </script>
 </body>
